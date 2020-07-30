@@ -9,7 +9,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 //Con IF
-/*function CalcularPrecio() 
+function CalcularPrecio() 
 {
     let valorLampara;
     let cantidadDeLamparas;
@@ -33,62 +33,4 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
         if(marca == "FelipeLamparas"){document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.9}
         else{document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.95}
     }
-}*/
-//Con Switch
-function CalcularPrecio()
-{
-    let valorLampara;
-    let cantidadDeLamparas;
-    let marca;
-    valorLampara = 35;
-    cantidadDeLamparas = parseInt(document.getElementById("txtIdCantidad").value);
-    marca = document.getElementById("Marca").value;
-
-    switch(cantidadDeLamparas)
-	{
-		case (cantidadDeLamparas >= 6):
-			document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)/2;
-			break;
-
-		case cantidadDeLamparas == 5:
-            switch(marca)
-            {
-                case "Argentina":
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.6;
-                    break;
-                default: 
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.7;
-                    break;
-            }            
-			break;
-
-		case cantidadDeLamparas == 4:
-            switch(marca)
-            {
-                case "ArgentinaLuz":
-                case "FelipeLamparas":
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.75;
-                    break;
-                default:
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.8;
-                    break;
-            }
-
-		case cantidadDeLamparas == 3:
-            switch(marca)
-            {
-                case "ArgentinaLuz":
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.85;
-                    break;
-                case "FelipeLamparas":
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.9;
-                    break;
-                default:
-                    document.getElementById("txtIdprecioDescuento").value = (valorLampara * cantidadDeLamparas)*0.95;
-                    break;
-            }
-		default:
-            break;
-	}
- 	
 }
